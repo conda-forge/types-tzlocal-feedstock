@@ -1,5 +1,5 @@
 {% set name = "types-tzlocal" %}
-{% set version = "4.2.0" %}
+{% set version = "4.2.1" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/types-tzlocal-{{ version }}.tar.gz
-  sha256: b8dfbc14215807e09ac8959eb40d1ac58f1d70ba01409e5bd11dc37bb48e0178
+  sha256: 4922311807b7c7039a9f2506171e467dba69e78fe56462908ef5e247c795830e
 
 build:
   number: 0
