@@ -7,23 +7,25 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/types-tzlocal-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/types-tzlocal-{{ version }}.tar.gz
   sha256: b84a115c0c68f0d0fa9af1c57f0645eeef0e539147806faf1f95ac3ac01ce47b
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - types-pytz
 
 test:
+  requires:
+    - python {{ python_min }}
   commands:
     - test -f $SP_DIR/tzlocal-stubs/__init__.pyi
 
